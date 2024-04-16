@@ -1,6 +1,8 @@
 /* eslint-disable no-confusing-arrow */
 import { useEffect, useRef, useState } from 'react';
-import { Button, Widget, Typography, Avatar, TextInput } from '@neo4j-ndl/react';
+import { Button, Widget, Typography, Avatar, TextInput, IconButton } from '@neo4j-ndl/react';
+
+import { HandThumbDownIconOutline, HandThumbUpIconOutline, ArrowPathIconOutline  } from '@neo4j-ndl/react/icons';
 
 import ChatBotUserAvatar from '../assets/chatbot-user.png';
 import ChatBotAvatar from '../assets/chatbot-ai.png';
@@ -129,6 +131,23 @@ export default function Chatbot(props: ChatbotProps) {
                   <div className='text-right align-bottom pt-3'>
                     <Typography variant='body-small'>{chat.datetime}</Typography>
                   </div>
+                  <Typography variant='body-small' className='text-right'>
+                    {chat.user === 'chatbot' ? (
+                      <div className='flex gap-1'>
+                        <IconButton clean aria-label="Search Icon">
+                          <HandThumbUpIconOutline className='w-4 h-4 inline-block n-text-palette-success-text' />
+                        </IconButton>
+                        <IconButton clean aria-label="Search Icon">
+                          <HandThumbDownIconOutline className='w-4 h-4 inline-block n-text-palette-danger-text' />
+                        </IconButton>
+                        <IconButton clean aria-label="Search Icon">
+                          <ArrowPathIconOutline className='w-4 h-4 inline-block' />
+                        </IconButton>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                  </Typography>
                 </Widget>
               </div>
             ))}
