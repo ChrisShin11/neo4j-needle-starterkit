@@ -25,7 +25,7 @@ export default function SideNav() {
             {...(isMobile ? { icon: <MagnifyingGlassIconOutline className={fullSizeClasses} /> } : {})}
             icon={<MagnifyingGlassIconOutline className={fullSizeClasses} />}
           >
-            Search
+            Doc Manager
           </SideNavigation.Item>
           <SideNavigation.Item
             href='#'
